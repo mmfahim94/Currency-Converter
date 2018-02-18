@@ -1,0 +1,18 @@
+$header-font-weight: 500;
+$body-font-size: 14px;
+
+.slds-form-element{
+    display: inline-block;
+}
+
+.slds-box{
+    width: fit-content;
+}
+
+.slds-form-element__label{
+    font-size: $body-font-size;
+}
+
+.slds-text-heading_medium{
+    font-weight: $header-font-weight;
+}

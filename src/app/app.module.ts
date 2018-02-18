@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
 
-
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'
+import { ConverterComponent } from './app.converterComponent'
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, ConverterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule, HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ConverterComponent]
 })
+
 export class AppModule { }

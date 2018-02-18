@@ -1,0 +1,55 @@
+<article class = "slds-m-top_small">
+  <div class="slds-box slds-align_absolute-center">
+    <br>
+    <div class="slds-card__body slds-card__body_inner">
+      
+      <label class="slds-form-element__label" for="text-input-id-1">Type in amount and select currency: </label>
+      <div class="slds-align_absolute-center">
+        <div class="slds-form-element input">
+          <div class="slds-form-element__control">
+            <input #from (keypress)="validateInput($event)" class="slds-input" id= "text-input-id-1" type="text" [(ngModel)]="convertFrom" (ngModelChange) = "getCurrencyRates()" placeholder="0.00">
+          </div>
+        </div>
+        
+        <div class="slds-form-element select" style="padding-left: 5px">
+          <div class="slds-form-element__control"> 
+            <div class="slds-select_container">
+              <select class="slds-select" (ngModelChange) = "setCurrencyFrom($event, from.value)" [(ngModel)] = "currencyFrom">
+                <option value= {{currency.name}} *ngFor="let currency of currencyList"> {{currency.name}} </option>
+              </select>
+            </div>  
+          </div>  
+        </div>  
+      </div>
+    
+      <br>
+      
+      <label class="slds-form-element__label" for="text-input-id-2">Converted amount:</label>
+      <div class="slds-align_absolute-center">
+        <div class="slds-form-element input">
+          <div class="slds-form-element__control">
+            <input #to (keydown)="preventTyping($event)" class="slds-input" id= "text-input-id-2" type="text" [(ngModel)]="convertTo" placeholder="0.00">
+          </div>
+        </div>
+        
+        <div class="slds-form-element select" style="padding-left: 5px">
+          <div class="slds-form-element__control"> 
+            <div class="slds-select_container">
+              <select class="slds-select" (ngModelChange) = "setCurrencyTo($event)" [(ngModel)] = "currencyTo">  
+                <option value= {{currency.name}} *ngFor="let currency of currencyList"> {{currency.name}} </option>
+              </select>
+            </div>  
+          </div>
+        </div>            
+      </div>
+
+      <br>
+
+      <div class="slds-text-align_right">
+        <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" class="slds-text-link">Disclaimer</a>
+      </div>
+
+    </div>
+  </div>
+
+</article>
