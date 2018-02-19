@@ -2,7 +2,7 @@
 
 A currency converter web app.
 
-## Running the app
+## Installation instructions
 
 - Clone/download this git repository to your local directory (`git clone 'the URL of this repo'`).
 - From your terminal, go to the directory (`cd .../Currency-Converter`).
