@@ -7,7 +7,7 @@
       <div class="slds-align_absolute-center">
         <div class="slds-form-element input">
           <div class="slds-form-element__control">
-            <input #from (keypress)="validateInput($event)" class="slds-input" id= "text-input-id-1" type="text" [(ngModel)]="convertFrom" (ngModelChange) = "getCurrencyRates()" placeholder="0.00">
+            <input #from (keypress)="validateInput($event)" class="slds-input" id= "text-input-id-1" type="text" [(ngModel)]="convertFrom" (ngModelChange) = "convert()" placeholder="0.00">
           </div>
         </div>
         

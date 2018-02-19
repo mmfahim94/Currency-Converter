@@ -24,7 +24,7 @@ export class ConverterComponent {
   
   /**
    * Sets the initial values of the select options to 'CAD' and 'USD'
-   * @param http initialize the Http service to retrieve information from the fixer.io API
+   * @param http initialize the Http service
    */  
   constructor(private http: Http){
     this.currencyFrom = 'CAD';
@@ -69,13 +69,7 @@ export class ConverterComponent {
           currency.value = currencyRates.rates.EUR
         } 
       });
-
-      this.currencyList.forEach((currency)=>{
-        if(currency.name === this.currencyTo){
-          this.converterfactor = currency.value;
-          this.convert();
-        }
-      });
+      this.setCurrencyValue();
     })
   }
 
@@ -86,9 +80,9 @@ export class ConverterComponent {
     this.currencyList.forEach((currency)=>{
       if(this.currencyTo === currency.name){
         this.converterfactor = currency.value
+        this.convert();
       }
     });   
-    return this.converterfactor;
   }
 
   /**
