@@ -1,7 +1,7 @@
 # Currency Converter
 
 A currency converter web app. 
-https://gentle-crag-18241.herokuapp.com/
+- App URL: https://gentle-crag-18241.herokuapp.com/
 
 ## Installation instructions
 
