@@ -5,8 +5,8 @@ A currency converter web app.
 ## Running the app
 
 - Clone/download this git repository to your local directory (`git clone ...`).
+- From your terminal, go to the directory (`cd ... /currency-converter`).
 - Install node (with npm) if you don't have it installed already.
-- Open your terminal and then go to the directory (`cd ... /currency-converter`)
 - Run `npm install` to make sure all the dependencies are installed.
 - Run `npm start` for a dev server.
 - Navigate to `http://localhost:4200/`. The app will automatically reload if you  change any of the source files.
