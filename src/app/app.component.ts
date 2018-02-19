@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
+/**
+ * A class that represents the App component
+ * @class AppComponent
+ */
 export class AppComponent { } 

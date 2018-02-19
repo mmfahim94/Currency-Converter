@@ -18,13 +18,13 @@ export class ConverterComponent {
   currencyList = [{name: 'CAD', value:0},
                   {name: 'USD', value:0},
                   {name: 'EUR', value:0}];
-  convertFrom:number= 0.00; 
-  convertTo:number=0.00; 
+  convertFrom:number = 0.00; 
+  convertTo:number = 0.00; 
   converterfactor:number;  
   
   /**
    * Sets the initial values of the select options to 'CAD' and 'USD'
-   * @param http initialize the Http service to retrieve information from API
+   * @param http initialize the Http service to retrieve information from the fixer.io API
    */  
   constructor(private http: Http){
     this.currencyFrom = 'CAD';
@@ -33,7 +33,7 @@ export class ConverterComponent {
   }
 
   /**
-   * sets the urrency to convert from
+   * sets the currency to convert from
    * @param name - the name of the currency to convert from
    * @param value - the value of the selected currency
    */
@@ -44,7 +44,7 @@ export class ConverterComponent {
   }  
 
   /**
-   * gets the latest rates of currencies based on the selection and stores them into array 
+   * gets the latest rates of currencies from the API and stores them into array 
    */
   public getCurrencyRates = () => {
     this.http.get('https://api.fixer.io/latest?base=' + this.currencyFrom)
@@ -80,7 +80,7 @@ export class ConverterComponent {
   }
 
   /**
-   * sets the rate in which the currency should get converted
+   * sets the rate in which the currency should get converted in
    */
   public setCurrencyValue = () => {
     this.currencyList.forEach((currency)=>{
@@ -93,7 +93,7 @@ export class ConverterComponent {
 
   /**
    * sets the currency to convert to
-   * @param name - the name of the currency to conver to
+   * @param name - the name of the currency to convert to
    */
   public setCurrencyTo = (name: String) => {
     this.currencyTo = name;
@@ -101,7 +101,7 @@ export class ConverterComponent {
   }
 
   /**
-   * converts the currency based on selection
+   * converts the currency
    */
   public convert = () => {
     if(this.currencyTo == this.currencyFrom){
@@ -114,7 +114,7 @@ export class ConverterComponent {
   }
   
   /**
-   * prevent clients from typing invalid characters, i.e letters
+   * prevents typing of invalid characters, i.e letters
    * @param evt - keyboard interaction event
    */
   public validateInput = (evt: any) => {
@@ -127,7 +127,7 @@ export class ConverterComponent {
   }
 
   /**
-   * prevent clients from typing
+   * prevents typing when the function is called
    * @param evt - keyboard interaction event
    */
   public preventTyping = (evt: any) => {

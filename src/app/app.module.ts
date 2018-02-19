@@ -8,13 +8,12 @@ import { ConverterComponent } from './app.converterComponent'
 
 
 @NgModule({
-  declarations: [
-    AppComponent, ConverterComponent
-  ],
   imports: [
     BrowserModule, FormsModule, HttpModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent, ConverterComponent
+  ],
   bootstrap: [AppComponent, ConverterComponent]
 })
 
